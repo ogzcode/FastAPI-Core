@@ -1,0 +1,85 @@
+$main-color: rgb(20, 138, 235);
+$text-color: rgb(58, 58, 68);
+$border-radius: .25rem;
+$margin: 1rem;
+$color-w: white;
+$border: 1px solid $main-color;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: $main-color;
+    font-family: sans-serif;
+}
+
+.container {
+    max-width: 500px;
+    padding: 2rem;
+    background-color: $color-w;
+    border-radius: $border-radius;
+    box-shadow: 
+                0px 2px 10px rgba(0,0,0,.1),
+                2px 4px 5px rgba(0,0,0,.2);
+}
+
+.header {
+    margin-bottom: $margin;
+    border-bottom: $border;
+    padding-bottom: .5rem;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.fab {
+    color: $main-color;
+    font-size: 48px;
+    margin-right: 1rem;
+}
+
+.title {
+    font-size: 24px;
+    color: $text-color;
+    font-weight: 700;
+}
+
+.date {
+    font-size: 10px;
+    opacity: .5;
+    margin-top: .25rem;
+    font-style: italic;
+}
+
+.content {
+    color: $text-color;
+    opacity: .9;
+    font-size: 14px;
+    margin-bottom: $margin;
+}
+
+button {
+    float: right;
+    border: $border;
+    border-radius: $border-radius;
+    padding: .25rem .5rem;
+    color: $main-color;
+    background-color: $color-w;
+    font-weight: 700;
+    transition: .2s;
+    cursor: pointer;
+
+    &:hover {
+        color: $color-w;
+        background-color: $main-color;
+    }
+}

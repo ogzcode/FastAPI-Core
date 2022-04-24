@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  background-color: #148aeb;
+  font-family: sans-serif;
+}
+
+.container {
+  max-width: 500px;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 0.25rem;
+  -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1), 2px 4px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1), 2px 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #148aeb;
+  padding-bottom: .5rem;
+}
+
+.left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.fab {
+  color: #148aeb;
+  font-size: 48px;
+  margin-right: 1rem;
+}
+
+.title {
+  font-size: 24px;
+  color: #3a3a44;
+  font-weight: 700;
+}
+
+.date {
+  font-size: 10px;
+  opacity: .5;
+  margin-top: .25rem;
+  font-style: italic;
+}
+
+.content {
+  color: #3a3a44;
+  opacity: .9;
+  font-size: 14px;
+  margin-bottom: 1rem;
+}
+
+button {
+  float: right;
+  border: 1px solid #148aeb;
+  border-radius: 0.25rem;
+  padding: .25rem .5rem;
+  color: #148aeb;
+  background-color: white;
+  font-weight: 700;
+  -webkit-transition: .2s;
+  transition: .2s;
+  cursor: pointer;
+}
+
+button:hover {
+  color: white;
+  background-color: #148aeb;
+}
+/*# sourceMappingURL=style.css.map */
