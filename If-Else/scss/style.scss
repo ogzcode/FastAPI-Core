@@ -1,0 +1,108 @@
+:root {
+    --primary-color: #0d6efd;
+    --success-color: #198754;
+    --danger-color: #dc3545;
+    --info-color: #ffc107;
+    --dark-color: #212529;
+    --secondary-color: #6c757d;
+}
+
+@mixin text-color ($val, $outline) {
+
+    @if $outline==true {
+        color: var(--#{$val}-color);
+        border: 1px solid var(--#{$val}-color);
+        background-color: white;
+
+        &:hover {
+            background-color: var(--#{$val}-color);
+            color: white;
+        } 
+    }
+
+    @else {
+        color: white;
+        background-color: var(--#{$val}-color);
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.normal {
+    margin-bottom: 2rem;
+}
+
+.btn {
+    border: none;
+    margin: 0 1rem;
+    padding: .5rem 1rem;
+    text-transform: uppercase;
+    border-radius: .25rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+
+    &:active {
+        transform: scale(.9);
+    }
+}
+
+.btn-primary {
+    @include text-color(primary, false);
+}
+
+.btn-outline-primary {
+    @include text-color(primary, true);
+}
+
+.btn-danger {
+    @include text-color(danger, false);
+}
+
+.btn-outline-danger {
+    @include text-color(danger, true);
+}
+
+.btn-info {
+    @include text-color(info, false);
+}
+
+.btn-outline-info {
+    @include text-color(info, true);
+}
+
+.btn-success {
+    @include text-color(success, false);
+}
+
+.btn-outline-success {
+    @include text-color(success, true);
+}
+
+.btn-dark {
+    @include text-color(dark, false);
+}
+
+.btn-outline-dark {
+    @include text-color(dark, true);
+}
+
+.btn-secondary {
+    @include text-color(secondary, false);
+}
+
+.btn-outline-secondary {
+    @include text-color(secondary, true);
+}
