@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-25 {
+    display: flex;
+    width: 800px;
+
+    @for $i from 1 through 4 {
+        $blue-code: $i * 50;
+        $green-code: $i * 50;
+        .col-#{$i} { 
+            width: 25%;
+            background-color: rgb(0,$green-code,$blue-code);
+            height: 50px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.container-increment {
+    display: flex;
+    width: 80%;
+    margin: 1rem;
+
+    @for $i from 1 through 4 {
+        $green-code: $i * 20;
+        $red-code: $i * 40;
+        $blue-code: $i * 10;
+        .col-#{$i} {
+            width: 100% - 20 * $i;
+            background-color: rgb($red-code,$green-code,$blue-code);
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-transform: uppercase;
+        }
+    }
+}
