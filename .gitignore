@@ -1,0 +1,24 @@
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+env/
+
+# Dependency directories
+.idea/
+.vscode/
+
+# OS or Editor files
+.DS_Store
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Environments
+.env
+
+*.db
