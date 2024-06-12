@@ -1,20 +1,24 @@
 from pydantic import BaseModel
+from pydantic.generics import GenericModel
+from typing import TypeVar, Generic, Union, Dict
 
-class CustomResponse(BaseModel):
+dinamic_data = TypeVar('dinamic_data')
+
+class CustomResponse(GenericModel, Generic[dinamic_data]):
     message: str
-    data: dict
+    data: Union[dinamic_data, Dict]
     status: int
 
 
-class Token(BaseModel):
-    access_token: str
+class LoginRequest(BaseModel):
+    email: str
+    password: str
 
-class TokenData(BaseModel):
-    username: str = None
-    email: str = None
-    id: int = None
+class LoginResponse(BaseModel):
+    token: str
+    user: dict
 
-
-class LoginSchema(BaseModel):
+class SignupRequest(BaseModel):
+    username: str
     email: str
     password: str
