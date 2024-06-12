@@ -1,12 +1,15 @@
-from fastapi import FastAPI
+from routes import authRoutes, userRoutes
+from core import db, exceptions
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from database.config import engine
-from database import models
-from routes import users
+from dotenv import load_dotenv
+load_dotenv()
 
-models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
+
+
+db.create_tables()
 
 app.add_middleware(
     CORSMiddleware,
@@ -16,10 +19,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(users.router)
+app.add_exception_handler(Exception,exceptions.http_500_error_handler)
+app.add_exception_handler(HTTPException, exceptions.http_exception_handler)
 
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
+app.include_router(authRoutes)
+app.include_router(userRoutes)
 
+
+@app.get("/", tags=["root"])
+async def root():
+    return {"message": "Hello World"}
