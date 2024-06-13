@@ -7,7 +7,7 @@ Bu proje, FastAPI kullanarak basit bir CRUD (Create, Read, Update, Delete),authe
 1. Projeyi klonlayın:
 
     ```bash
-    git clone https://github.com/kullanici/adı.git
+    git clone https://github.com/ogzcode/FastAPI-Core.git
     ```
 
 2. Proje dizinine gidin ve gerekli kütüphaneleri yükleyin:
@@ -25,20 +25,38 @@ Bu proje, FastAPI kullanarak basit bir CRUD (Create, Read, Update, Delete),authe
 
 4. Tarayıcınızda [http://localhost:8000/docs](http://localhost:8000/docs) adresine giderek API belgelerine erişebilirsiniz.
 
-## API Endpointleri
 
-- **POST /users/createUser:** Yeni bir kullanıcı kaydı oluşturur.
-- **POST /users/login:** Kullanıcı girişi yapar ve bir erişim tokeni döndürür.
-- **GET /users/getUserById:** Mevcut kullanıcı bilgilerini döndürür(Admin erişebilir).
-- **PUT /users/updateUser:** Mevcut kullanıcı bilgilerini günceller.
-- **DELETE /users/deleteUserById:** Mevcut kullanıcıyı siler.
-- **GET /users/getUsers:** Tüm kullanıcıları listeler.
-- **DELETE /users/deleteAllUsers:** Tüm kullanıcıları siler.
+# Docker ile Çalıştırma
+Bu projeyi Docker kullanarak çalıştırmak için aşağıdaki adımları izleyin:
+
+1. Docker'ı bilgisayarınıza yükleyin ve çalıştırın.
+
+2. Proje dizinine gidin:
+
+    ```bash
+    git clone https://github.com/ogzcode/FastAPI-Core.git
+    cd /C:/Users/Windows 11/Desktop/FastAPI-Core/
+    ```
+
+3. Docker imajını oluşturun:
+
+    ```bash
+    docker build -t fastapi-core .
+    ```
+
+4. Docker konteynerını başlatın:
+
+    ```bash
+    docker run -p 8000:8000 fastapi-core
+    ```
+
+5. Tarayıcınızda [http://localhost:8000/docs](http://localhost:8000/docs) adresine giderek API belgelerine erişebilirsiniz.
+
 
 ## Authentication
 
-- Kullanıcı kaydı yapmadan önce, `/users/createUser` endpoint'i kullanarak yeni bir kullanıcı kaydı oluşturun.
-- Kayıtlı kullanıcılar, `/users/login` endpoint'i kullanarak giriş yapabilirler ve bir erişim tokeni alabilirler.
+- Kullanıcı kaydı yapmadan önce, `/auth/signup` endpoint'i kullanarak yeni bir kullanıcı kaydı oluşturun.
+- Kayıtlı kullanıcılar, `/auth/login` endpoint'i kullanarak giriş yapabilirler ve bir erişim tokeni alabilirler.
 - Elde edilen erişim tokeni, diğer işlemlerde kullanılabilir.
 
 ## CRUD İşlemleri
